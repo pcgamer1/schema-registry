@@ -68,7 +68,7 @@ router.get('/schemas/:id', async (req,res) => {
                 return res.status(404).send({"result": "error", "message": "Schema not found"})
             }
         }
-        res.status(200).send({"result": "error", "message": "Schema found", "data": reqSchema})
+        res.status(200).send({"result": "success", "message": "Schema found", "data": reqSchema})
     } catch(e) {
         res.status(500).send()
     }
