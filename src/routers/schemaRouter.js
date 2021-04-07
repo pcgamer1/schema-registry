@@ -41,8 +41,8 @@ router.get('/schemas', async (req, res) => {
     }
 
     try {
-        if(fs.existsSync('schemas.json')) {
-            localObj = fs.readFileSync('schemas.json')
+        if(fs.existsSync(process.env.SCHEMA_PATH)) {
+            localObj = fs.readFileSync(process.env.SCHEMA_PATH)
             localObjJSON = JSON.parse(localObj)
         }
         res.status(200).send(localObjJSON)
